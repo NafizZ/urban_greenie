@@ -39,6 +39,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.6
+  flutter_gen_runner: 5.3.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -63,6 +65,24 @@ flutter:
     - assets/background_images/
     - assets/custom_icons/
     - assets/vector_images/
+  generate: true
+
+flutter_gen:
+  output: lib/core/resource/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+  # There is a type missmatch in generated code
+  # thats why flutter_svg not activated yet
+  # instead we'll use path.
+  # integrations:
+  #   flutter_svg: true
+
+  assets:
+    enabled: true
+
+    outputs:
+      class_name: GreenieAsset
+      package_parameter_enabled: false
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
