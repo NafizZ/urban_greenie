@@ -74,6 +74,9 @@ class $AssetsCustomIconsGen {
   String get scannerFloatingButtonIcon =>
       'assets/custom_icons/scanner_floating_button_icon.svg';
 
+  /// File path: assets/custom_icons/scanner_icon.svg
+  String get scannerIcon => 'assets/custom_icons/scanner_icon.svg';
+
   /// File path: assets/custom_icons/search_filter_icon.svg
   String get searchFilterIcon => 'assets/custom_icons/search_filter_icon.svg';
 
@@ -101,6 +104,7 @@ class $AssetsCustomIconsGen {
         myPlantUnselectedIcon,
         potMeterButtonIcon,
         scannerFloatingButtonIcon,
+        scannerIcon,
         searchFilterIcon,
         searchIcon,
         waterCalculationButtonIcon,

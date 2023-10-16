@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:urban_greenie/core/resource/assets.gen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,22 +44,74 @@ class _HomeScreenState extends State<HomeScreen> {
       // appBar: AppBar(
       //   title: const Text('BottomNavigationBar Sample'),
       // ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: Column(
+        children: [
+          Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
+          SvgPicture.asset(
+            GreenieAsset.customIcons.searchIcon,
+            // width: 50,
+            // height: 50,
+            fit: BoxFit.fill,
+          ),
+        ],
       ),
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: SizedBox(
-        height: 70,
-        width: 70,
-        child: FittedBox(
-          child: FloatingActionButton(
-            shape: const CircleBorder(),
-            child: const Icon(Icons.home),
-            onPressed: () {},
+      floatingActionButton: Container(
+        height: 60,
+        width: 60,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.deepOrange],
           ),
         ),
+        child: FloatingActionButton(
+          backgroundColor: Colors.transparent.withOpacity(0.0),
+          // child: SvgPicture.asset(
+          //   GreenieAsset.customIcons.scannerFloatingButtonIcon,
+          //   // width: 50,
+          //   // height: 50,
+          //   fit: BoxFit.fill,
+          // ),
+          onPressed: () {},
+        ),
       ),
+      // GestureDetector(
+      //   onTap: () {},
+      //   child: Container(
+      //     width: 56,
+      //     height: 56,
+      //     decoration: const BoxDecoration(
+      //       shape: BoxShape.circle,
+      //       //  color: Colors.pink,
+      //     ),
+      //     child: SvgPicture.asset(
+      //       GreenieAsset.customIcons.scannerFloatingButtonIcon,
+      //       width: 50,
+      //       height: 50,
+      //       fit: BoxFit.cover,
+      //     ),
+      //   ),
+      // ),
+
+      //     FloatingActionButton(
+      //   shape: const CircleBorder(),
+      //   child: Container(
+      //     color: Colors.blueAccent,
+      //     child: SvgPicture.asset(
+      //       GreenieAsset.customIcons.scannerFloatingButtonIcon,
+      //       alignment: Alignment.topLeft,
+      //       // width: 50,
+      //       // height: 50,
+      //       fit: BoxFit.fill,
+      //     ),
+      //   ),
+      //   onPressed: () {},
+      // ),
+
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(16),
