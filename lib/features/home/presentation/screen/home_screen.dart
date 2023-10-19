@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:urban_greenie/core/resource/assets.gen.dart';
 
+import 'widgets/home_widget.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -14,10 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomeWidget(),
     Text(
       'Index 1: Business',
       style: optionStyle,
@@ -38,24 +37,20 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+// SvgPicture.asset(
+  //   GreenieAsset.customIcons.searchIcon,
+  //   // width: 50,
+  //   // height: 50,
+  //   fit: BoxFit.fill,
+  // ),
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(
       //   title: const Text('BottomNavigationBar Sample'),
       // ),
-      body: Column(
-        children: [
-          Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
-          ),
-          SvgPicture.asset(
-            GreenieAsset.customIcons.searchIcon,
-            // width: 50,
-            // height: 50,
-            fit: BoxFit.fill,
-          ),
-        ],
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
