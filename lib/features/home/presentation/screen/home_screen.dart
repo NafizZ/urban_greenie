@@ -65,12 +65,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: FloatingActionButton(
           backgroundColor: Colors.transparent.withOpacity(0.0),
-          // child: SvgPicture.asset(
-          //   GreenieAsset.customIcons.scannerFloatingButtonIcon,
-          //   // width: 50,
-          //   // height: 50,
-          //   fit: BoxFit.fill,
-          // ),
+          child: SvgPicture.asset(
+            GreenieAsset.customIcons.scannerFloatingButtonIcon,
+            // width: 50,
+            // height: 50,
+            // fit: BoxFit.fill,
+          ),
           onPressed: () {},
         ),
       ),

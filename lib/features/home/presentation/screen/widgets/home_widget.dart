@@ -7,11 +7,9 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          // color: Colors.red,
+        Material(
+          elevation: 10.0,
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           child: Container(
             // color: Colors.blue,
             height: 200,
@@ -26,6 +24,22 @@ class HomeWidget extends StatelessWidget {
                 ],
               ),
               borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Text("Hey, Get to know your plant identity!"),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text("Click here"),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),
