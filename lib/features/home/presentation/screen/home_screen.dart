@@ -60,16 +60,18 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           gradient: LinearGradient(
-            colors: [Colors.purple, Colors.deepOrange],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 149, 233, 148),
+              Color.fromARGB(255, 1, 104, 49),
+            ],
           ),
         ),
-        child: FloatingActionButton(
-          backgroundColor: Colors.transparent.withOpacity(0.0),
-          child: SvgPicture.asset(
-            GreenieAsset.customIcons.scannerFloatingButtonIcon,
-            // width: 50,
-            // height: 50,
-            // fit: BoxFit.fill,
+        child: IconButton(
+          icon: const Icon(
+            Icons.image_search,
+            color: Colors.white,
           ),
           onPressed: () {},
         ),
