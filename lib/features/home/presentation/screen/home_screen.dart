@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:urban_greenie/core/resource/assets.gen.dart';
 
 import 'widgets/home_widget.dart';
 

@@ -59,7 +59,7 @@ class HomeWidget extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {},
-                                child: Text("Click here"),
+                                child: const Text("Click here"),
                               )
                             ],
                           ),
@@ -130,7 +130,7 @@ class HomeWidget extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {},
-                                child: Text("Click here"),
+                                child: const Text("Click here"),
                               )
                             ],
                           ),
@@ -176,7 +176,7 @@ class HomeWidget extends StatelessWidget {
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: Icon(Icons.energy_savings_leaf),
+                          child: const Icon(Icons.energy_savings_leaf),
                         ),
                       ),
                       const SizedBox(height: 16.0),
@@ -206,7 +206,7 @@ class HomeWidget extends StatelessWidget {
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: Icon(Icons.water),
+                          child: const Icon(Icons.water),
                         ),
                       ),
                       const SizedBox(height: 16.0),
@@ -236,7 +236,7 @@ class HomeWidget extends StatelessWidget {
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: Icon(Icons.calculate),
+                          child: const Icon(Icons.calculate),
                         ),
                       ),
                       const SizedBox(height: 16.0),
@@ -266,7 +266,7 @@ class HomeWidget extends StatelessWidget {
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
-                          child: Icon(Icons.sunny),
+                          child: const Icon(Icons.sunny),
                         ),
                       ),
                       const SizedBox(height: 16.0),
