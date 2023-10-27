@@ -17,8 +17,19 @@ class HomeWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const SizedBox(
-            height: 200,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 32.0, 20.0, 10.0),
+            child: Container(
+              height: 80,
+              color: Colors.amber,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 20.0),
+            child: Container(
+              height: 40,
+              color: Colors.amber,
+            ),
           ),
           Stack(
             children: [
