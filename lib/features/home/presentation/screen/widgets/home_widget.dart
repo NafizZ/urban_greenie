@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:urban_greenie/core/resource/assets.gen.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -25,10 +27,44 @@ class HomeWidget extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 20.0),
-            child: Container(
-              height: 40,
-              color: Colors.amber,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25)),
+                    child: TextField(
+                      // controller: controller,
+                      // onChanged: onChanged,
+                      decoration: InputDecoration(
+                        prefixIcon: SvgPicture.asset(
+                          GreenieAsset.customIcons.searchIcon,
+                          width: 32,
+                          height: 32,
+                          fit: BoxFit.cover,
+                        ),
+                        hintText: "Search Plant",
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 40,
+                    width: 48,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25)),
+                    child: const Icon(Icons.filter),
+                  ),
+                ),
+              ],
             ),
           ),
           Stack(

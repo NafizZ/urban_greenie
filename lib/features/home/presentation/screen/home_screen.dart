@@ -112,11 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
           top: Radius.circular(16),
         ),
         child: BottomAppBar(
-          height: 80,
+          color: Colors.white,
+          height: 64,
           shape: const CircularNotchedRectangle(),
           notchMargin: 10.0,
           clipBehavior: Clip.antiAlias,
-          color: Theme.of(context).colorScheme.primary,
+          // color: Theme.of(context).colorScheme.primary,
           child: SizedBox(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,14 +126,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () => _onItemTapped(0),
                   icon: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: Colors.red,
                   ),
                 ),
                 IconButton(
                   onPressed: () => _onItemTapped(1),
                   icon: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: Colors.red,
                   ),
                 ),
                 const SizedBox(width: 36.0),
@@ -140,14 +141,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () => _onItemTapped(2),
                   icon: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: Colors.red,
                   ),
                 ),
                 IconButton(
                   onPressed: () => _onItemTapped(3),
                   icon: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: Colors.red,
                   ),
                 ),
               ],
