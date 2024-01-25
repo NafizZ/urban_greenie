@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:urban_greenie/features/my_plants/presentation/screen/my_plants_screen.dart';
 
 import 'widgets/home_widget.dart';
 
@@ -23,10 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'Index 2: School',
       style: optionStyle,
     ),
-    Text(
-      'Index 3: University',
-      style: optionStyle,
-    ),
+    MyPlantsScreen(),
   ];
 
   void _onItemTapped(int index) {
