@@ -8,7 +8,7 @@
 PRODUCT_NAME = urban_greenie
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = urban.greenie.urbanGreenie
+PRODUCT_BUNDLE_IDENTIFIER = com.urbangreenie.urbanGreenie
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 urban.greenie. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.urbangreenie. All rights reserved.
