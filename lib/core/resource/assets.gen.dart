@@ -16,16 +16,25 @@ class $AssetsBackgroundImagesGen {
   String get bg0BasicGradient =>
       'assets/background_images/bg_0_basic_gradient.svg';
 
+  /// File path: assets/background_images/bg_1_home_screen.jpg
+  AssetGenImage get bg1HomeScreenJpg =>
+      const AssetGenImage('assets/background_images/bg_1_home_screen.jpg');
+
   /// File path: assets/background_images/bg_1_home_screen.svg
-  String get bg1HomeScreen => 'assets/background_images/bg_1_home_screen.svg';
+  String get bg1HomeScreenSvg =>
+      'assets/background_images/bg_1_home_screen.svg';
 
   /// File path: assets/background_images/bg_2_my_plants_screen.svg
   String get bg2MyPlantsScreen =>
       'assets/background_images/bg_2_my_plants_screen.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [bg0BasicGradient, bg1HomeScreen, bg2MyPlantsScreen];
+  List<dynamic> get values => [
+    bg0BasicGradient,
+    bg1HomeScreenJpg,
+    bg1HomeScreenSvg,
+    bg2MyPlantsScreen,
+  ];
 }
 
 class $AssetsCustomIconsGen {
@@ -93,45 +102,60 @@ class $AssetsCustomIconsGen {
 
   /// List of all assets
   List<String> get values => [
-        communitySelectedIcon,
-        communityUnselectedIcon,
-        healthSelectedIcon,
-        healthUnselectedIcon,
-        homeSelectedIcon,
-        homeUnselectedIcon,
-        lightMeterButtonIcon,
-        myPlantSelectedIcon,
-        myPlantUnselectedIcon,
-        potMeterButtonIcon,
-        scannerFloatingButtonIcon,
-        scannerIcon,
-        searchFilterIcon,
-        searchIcon,
-        waterCalculationButtonIcon,
-        weatherInfoButtonIcon
-      ];
+    communitySelectedIcon,
+    communityUnselectedIcon,
+    healthSelectedIcon,
+    healthUnselectedIcon,
+    homeSelectedIcon,
+    homeUnselectedIcon,
+    lightMeterButtonIcon,
+    myPlantSelectedIcon,
+    myPlantUnselectedIcon,
+    potMeterButtonIcon,
+    scannerFloatingButtonIcon,
+    scannerIcon,
+    searchFilterIcon,
+    searchIcon,
+    waterCalculationButtonIcon,
+    weatherInfoButtonIcon,
+  ];
 }
 
 class $AssetsVectorImagesGen {
   const $AssetsVectorImagesGen();
 
+  /// File path: assets/vector_images/vector_image_1_home.jpg
+  AssetGenImage get vectorImage1HomeJpg =>
+      const AssetGenImage('assets/vector_images/vector_image_1_home.jpg');
+
   /// File path: assets/vector_images/vector_image_1_home.svg
-  String get vectorImage1Home => 'assets/vector_images/vector_image_1_home.svg';
+  String get vectorImage1HomeSvg =>
+      'assets/vector_images/vector_image_1_home.svg';
 
   /// File path: assets/vector_images/vector_image_1_my_plants_today_task.svg
   String get vectorImage1MyPlantsTodayTask =>
       'assets/vector_images/vector_image_1_my_plants_today_task.svg';
 
+  /// File path: assets/vector_images/vector_image_2_home.png
+  AssetGenImage get vectorImage2HomePng =>
+      const AssetGenImage('assets/vector_images/vector_image_2_home.png');
+
   /// File path: assets/vector_images/vector_image_2_home.svg
-  String get vectorImage2Home => 'assets/vector_images/vector_image_2_home.svg';
+  String get vectorImage2HomeSvg =>
+      'assets/vector_images/vector_image_2_home.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [vectorImage1Home, vectorImage1MyPlantsTodayTask, vectorImage2Home];
+  List<dynamic> get values => [
+    vectorImage1HomeJpg,
+    vectorImage1HomeSvg,
+    vectorImage1MyPlantsTodayTask,
+    vectorImage2HomePng,
+    vectorImage2HomeSvg,
+  ];
 }
 
 class GreenieAsset {
-  GreenieAsset._();
+  const GreenieAsset._();
 
   static const $AssetsBackgroundImagesGen backgroundImages =
       $AssetsBackgroundImagesGen();
@@ -140,9 +164,12 @@ class GreenieAsset {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -162,10 +189,10 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -197,15 +224,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;
